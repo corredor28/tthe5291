@@ -1,0 +1,1 @@
+Scaffold-DbContext "Name=ConnectionStrings:ProductDatabase" Microsoft.EntityFrameworkCore.SqlServer -Force -Project ProductsDL -StartupProject ProductAPI2
