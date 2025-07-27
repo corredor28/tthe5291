@@ -26,15 +26,14 @@ namespace ProductsBL
             return product;
         }
 
-        public async Task<Product> Add(string name)
+        public async Task<Product> Add(Product product)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(name) )
+                if (string.IsNullOrWhiteSpace(product.Name) )
                 {
-                    throw new ArgumentNullException(nameof(name), "Product cannot be null.");
+                    throw new ArgumentNullException(nameof(product.Name), "Product cannot be null.");
                 }
-                var product = new Product { Name = name };
                 _productsdbContext.Products.Add(product);
                 await _productsdbContext.SaveChangesAsync();
                 return product;
@@ -46,23 +45,24 @@ namespace ProductsBL
             }
         }
 
-        public async Task<Product> Update(int id, string name)
+        public async Task<Product> Update(int id, Product product)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(name))
+                if (string.IsNullOrWhiteSpace(product.Name))
                 {
-                    throw new ArgumentNullException(nameof(name), "Product cannot be null.");
+                    throw new ArgumentNullException(nameof(product.Name), "Product cannot be null.");
                 }
 
-
-                var product = await _productsdbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
-                if (product == null)
+                var productDB = await _productsdbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+                if (productDB == null)
                 {
                     throw new KeyNotFoundException($"Product with ID {id} not found.");
                 }
-                product.Name = name;
-                _productsdbContext.Update(product);
+
+                productDB.Name = product.Name;
+                productDB.Price = product.Price;
+                _productsdbContext.Update(productDB);
                 await _productsdbContext.SaveChangesAsync();
                 return product;
             }

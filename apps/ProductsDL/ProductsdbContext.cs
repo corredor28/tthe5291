@@ -30,6 +30,9 @@ public partial class ProductsdbContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
+            entity.Property(e => e.Price)
+                .HasColumnType("decimal(18, 2)")
+                .HasColumnName("price");
         });
 
         OnModelCreatingPartial(modelBuilder);
