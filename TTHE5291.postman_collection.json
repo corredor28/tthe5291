@@ -42,7 +42,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzUzNjE0MjA2LCJleHAiOjE3NTM2MTc4MDYsImlhdCI6MTc1MzYxNDIwNiwiaXNzIjoiUHJvZHVjdEFQSSIsImF1ZCI6IkFwcFVzZXJzIn0.XjmjRCJsRLjIIb9HVzf47RBDboWGpM59qH8f6l-K0tU",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -70,7 +70,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzUzNjE0MjA2LCJleHAiOjE3NTM2MTc4MDYsImlhdCI6MTc1MzYxNDIwNiwiaXNzIjoiUHJvZHVjdEFQSSIsImF1ZCI6IkFwcFVzZXJzIn0.XjmjRCJsRLjIIb9HVzf47RBDboWGpM59qH8f6l-K0tU",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -99,7 +99,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzUzNjE0MjA2LCJleHAiOjE3NTM2MTc4MDYsImlhdCI6MTc1MzYxNDIwNiwiaXNzIjoiUHJvZHVjdEFQSSIsImF1ZCI6IkFwcFVzZXJzIn0.XjmjRCJsRLjIIb9HVzf47RBDboWGpM59qH8f6l-K0tU",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -136,7 +136,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzUzNjE0MjA2LCJleHAiOjE3NTM2MTc4MDYsImlhdCI6MTc1MzYxNDIwNiwiaXNzIjoiUHJvZHVjdEFQSSIsImF1ZCI6IkFwcFVzZXJzIn0.XjmjRCJsRLjIIb9HVzf47RBDboWGpM59qH8f6l-K0tU",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -174,7 +174,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzUzNjE0MjA2LCJleHAiOjE3NTM2MTc4MDYsImlhdCI6MTc1MzYxNDIwNiwiaXNzIjoiUHJvZHVjdEFQSSIsImF1ZCI6IkFwcFVzZXJzIn0.XjmjRCJsRLjIIb9HVzf47RBDboWGpM59qH8f6l-K0tU",
+							"value": "{{token}}",
 							"type": "string"
 						}
 					]
@@ -209,6 +209,11 @@
 		{
 			"key": "baseURL",
 			"value": "https://localhost:7178",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
 			"type": "default"
 		}
 	]
