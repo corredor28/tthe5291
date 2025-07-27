@@ -13,7 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ProductsdbContext>();
+builder.Services.AddDbContext<ProductsdbContext>(options =>
+    options.UseInMemoryDatabase("ProductsDb"));
+
+//builder.Services.AddDbContext<ProductsdbContext>();
 
 // JWT config
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -41,6 +44,16 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ProductsdbContext>();
+    db.Database.EnsureCreated();
+
+    db.Products.Add(new Product { Name = "Sample", Price = 9.99M });
+    db.Products.Add(new Product { Name = "Sample2", Price = 56.21M });
+    db.SaveChanges();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

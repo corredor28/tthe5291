@@ -18,7 +18,12 @@ public partial class ProductsdbContext : DbContext
     public virtual DbSet<Product> Products { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:ProductDatabase");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Name=ConnectionStrings:ProductDatabase");
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
